@@ -3,23 +3,19 @@ import React, { Component } from 'react';
 class Header extends Component {
 
     render() {
-        const { calendar } = this.props;
+        const { days } = this.props;
 
-        return (
-            <div>
-                <div className="row">
-                    <h2>{calendar.month}</h2>
-                </div>
+        return(
 
-                <div className = "row">
-                    {calendar.days.map(
-                        (day, index) => <div className="col col-xs-1 col-md-1" key={index}>{day}</div>
-                        )
-                    }
-                </div>
-            </div>
+        <tr>
+            {days.map(
+                (day, index) => <th key={index}>{day}</th>
+            )
+            }
+        </tr>
         );
     }
+
 }
 
 export default Header;
